@@ -1,0 +1,86 @@
+.container {
+    max-width: 350px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+  
+h2 {
+    text-align: center;
+}
+  
+.login-form {
+    padding: 20px;
+}
+  
+.form-group {
+    margin-bottom: 20px;
+}
+  
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+  
+.password-toggle {
+    position: relative;
+    top: -35px;
+    right: 10px;
+    cursor: pointer;
+}
+  
+.forgot-password {
+    text-decoration: none;
+    
+}
+  
+.forgot-password:hover {
+    color: #23527c;
+}
+  
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+button[type="submit"]:hover {
+    background-color: #23527c;
+}
+  
+.checkbox-group {
+    margin-bottom: 20px;
+}
+  
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.heading {
+    color: #03a9f4;
+    text-align: left;
+    margin-bottom: 20px;
+    translate: 100px;
+}
+
+#bckgrnd {
+    background-image: url(login-bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
