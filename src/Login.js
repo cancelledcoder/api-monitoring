@@ -94,4 +94,4 @@ const Login = () => {
 };
 
 export default Login;
-//by ayush shah
+//by ayush
