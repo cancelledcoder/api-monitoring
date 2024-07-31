@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import './Dashboard.css';
 
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 const Dashboard = () => {
   const navigate = useNavigate();
+  const chartRef = useRef(null);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -42,6 +63,14 @@ const Dashboard = () => {
     },
   };
 
+  useEffect(() => {
+    return () => {
+      if (chartRef.current) {
+        chartRef.current.destroy();
+      }
+    };
+  }, []);
+
   return (
     <div className="dashboard-container">
       <div className="stats-cards">
@@ -50,7 +79,7 @@ const Dashboard = () => {
         <div className="card">Action Required: 123</div>
       </div>
       <div className="chart-container">
-        <Line data={data} options={options} />
+        <Line ref={chartRef} data={data} options={options} />
       </div>
       <div className="tasks">
         <h3>Tasks</h3>

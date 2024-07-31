@@ -24,7 +24,7 @@ const Login = () => {
       navigate('/dashboard');
       return;
     }
-      //enter api link here
+//enter api link below to verify email and password
     try {
       const response = await axios.post('https://xyz-api.com/login', { email, password });
 

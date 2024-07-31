@@ -1,154 +1,175 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  z-index: -1;
+  translate: 95px;
+}
+
+.main-heading {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  font-size: 24px;
+  color: #03a9f4;
+  z-index: 1;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  text-align: center;
+}
+
+.lock-image {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 20px auto;
+}
+
+h2 {
+  color: #03a9f4;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.password-toggle {
+  position: relative;
+  top: -35px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  text-decoration: none;
+  color: #03a9f4;
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #03a9f4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0277bd;
+}
+
+.checkbox-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.links {
+  position: absolute;
+  top: 50px;
+  right: 10%;
+  z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
   
-  .login-page {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-  }
-  
+}
+
+.links a {
+  color: #03a9f4;
+  margin-left: 40px;
+  opacity: 0.8;
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  text-decoration-color: #8003f4;
+  text-size-adjust: 60%;
+}
+
+/* Error text */
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* CSS for loading indicator */
+button[type="submit"][disabled] {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* CSS for mobile responsiveness */
+@media (max-width: 768px) {
   .background-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    object-fit: contain;
-    z-index: -1;
+      width: 70%;
   }
-  
-  .main-heading {
-    text-align: center;
-    color: #03a9f4;
-    margin-bottom: 40px;
-  }
-  
-  .container {
-    max-width: 350px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
-  }
-  
-  .lock-image {
-    display: block;
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 20px auto;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #03a9f4;
-    margin-bottom: 20px;
-  }
-  
-  .login-form {
-    padding: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  .password-toggle {
-    position: relative;
-    top: -35px;
-    right: 10px;
-    cursor: pointer;
-  }
-  .forgot-password {
-    text-decoration: none;
-    color: #03a9f4;
-    display: block;
-    text-align: center;
-    margin-bottom: 15px;
-  } 
-  button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #03a9f4;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  button[type="submit"]:hover {
-    background-color: #0277bd;
-  }
-  .checkbox-group {
-    margin-bottom: 20px;
-  }
-  .checkbox-group input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  .heading {
-    color: #03a9f4;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .links {
-    text-align: right;
-    margin-top: 20px;
-  }
-  .links a {
-    color: #03a9f4;
-    margin-left: 15px;
-    text-decoration: none;
-  }
-  .links a:hover {
-    text-decoration: underline;
-  }
-  /* Error text */
-  .error {
-    color: red;
-    margin-bottom: 10px;
-  }
-  /* CSS for loading indicator */
-  button[type="submit"][disabled] {
-    background-color: #ddd;
-    cursor: not-allowed;
-  }
-  /* CSS for mobile responsiveness */
-  @media (max-width: 768px) {
-    .background-image {
-      width: 70;
-    }
 }
 @media (max-width: 480px) {
   .background-image {
-    width: 100%;
+      width: 100%;
   }
   .container {
-    width: 90%;
-    padding: 10px;
+      width: 90%;
+      padding: 10px;
   }
 }
