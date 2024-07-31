@@ -36,7 +36,8 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  position: absolute;
+  max-width: 350px;
   width: 100%;
   padding: 20px;
   background-color: #fff;
@@ -45,13 +46,14 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
   text-align: center;
+  margin: 150px;
 }
 
 .lock-image {
-  display: block;
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 20px auto;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: auto;
 }
 
 h2 {
