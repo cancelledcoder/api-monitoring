@@ -1,202 +1,207 @@
-.dashboard-container {
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.dashboard-page {
   display: flex;
   height: 100vh;
   width: 100vw;
-  background-color: #f0f2f5;
 }
 
-.sidebar {
-  width: 200px;
-  background-color: #fff;
-  padding: 20px;
-  border-right: 1px solid #ddd;
-}
-
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.sidebar-item.active {
-  background-color: #e9ecef;
-}
-
-.sidebar-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #007bff;
-  margin-right: 10px;
-}
-
-.dashboard-content {
-  flex: 1;
-  padding: 20px;
-}
-
-.header {
+/* Top Navigation Bar */
+.top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.lock-icon {
+  width: 80px;
+  height: 80px;
+  margin: none;
+  padding: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.dropdown-arrow {
+  margin-left: 5px;
+}
+
+/* Side Bar */
+.side-bar {
+  width: 16%;
+  background-color: #f5f5f5;
+  padding: 20px 0;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.side-bar-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.side-bar-item:hover {
+  background-color: #e0e0e0;
+}
+
+.selected {
+  background-color: #e0e0e0;
+}
+
+.side-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.side-arrow {
+  margin-left: auto;
+  color: #03a9f4;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 16%;
+  padding: 80px 20px 20px 20px;
+  background-color: #fff;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.notification {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.notification-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ff0000;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.user-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #007bff;
-  margin-left: 10px;
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-}
-
-.dashboard-card {
-  background-color: #fff;
+.summary-card {
+  flex: 1;
   padding: 20px;
+  color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-card-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.dashboard-card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #007bff;
-  margin-right: 10px;
-}
-
-.dashboard-card-footer {
-  font-size: 12px;
-  color: #6c757d;
+  margin: 0 10px;
   text-align: center;
 }
 
-.dashboard-graph-container {
-  background-color: #fff;
+.red-blur {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.yellow-blur {
+  background-color: rgba(255, 255, 0, 0.1);
+}
+
+.green-blur {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.chart-container,
+.tasks-container,
+.users-container {
+  margin-bottom: 20px;
   padding: 20px;
+  background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-graph-header {
+.tasks-chart {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.dashboard-graph {
-  height: 300px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  position: relative;
-}
-
-.dashboard-graph-legend {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.dashboard-graph-legend-item {
-  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.dashboard-table-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.tasks-chart h2 {
+  font-size: 50px;
+  color: #03a9f4;
+  margin: 0;
 }
 
-.dashboard-table {
+.tasks-chart p {
+  margin: 5px 0;
+}
+
+.users-container table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.dashboard-table th,
-.dashboard-table td {
+.users-container th,
+.users-container td {
   padding: 10px;
-  text-align: left;
   border-bottom: 1px solid #ddd;
+  text-align: left;
 }
 
-.dashboard-table th {
-  background-color: #f8f9fa;
+.users-container th {
+  background-color: #f0f0f0;
 }
 
-.dashboard-table-user-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #007bff;
-  margin-right: 5px;
+.chart-container {
+  display: inline-block;
+  width: 30%; /* Adjust to fit two charts side by side */
+  height: 500px; /* Adjust height to match the demo image */
+  margin: 1%;
+  vertical-align: top;
 }
 
-.dashboard-card-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: #e9ecef;
-  font-size: 48px;
-  font-weight: bold;
-  margin: 0 auto;
+.tasks-container {
+  display: inline-block;
+  width: 30%; /* Adjust to fit two charts side by side */
+  height: 500px; /* Adjust height to match the demo image */
+  margin: 1%;
+  vertical-align: top;
 }
 
-.dashboard-card-legend {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+.line-chart {
+  width: 100%;
+  height: 100%;
 }
 
-.dashboard-card-legend-item {
-  display: flex;
-  align-items: center;
+.pie-chart {
+  width: 100%;
+  height: 100%;
 }
 
-.logo {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 20px;
+.summary-component h3 {
+  color: gray; /* Change text color to gray */
 }
