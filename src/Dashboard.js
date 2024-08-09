@@ -53,13 +53,13 @@ const Dashboard = () => {
       <aside className="side-bar">
         <div className="side-bar-item selected">
           <div className="side-icon"></div>
-          <span>Dashboard</span>
+          <span><a href="/dashboard">Dashboard</a></span>
           <span className="side-arrow">&#9656;</span>
         </div>
         {['API Calls', 'User in AEM', 'Alert', 'Action Activities', 'Alert configuration', 'Post', 'Tickets', 'Reports', 'Jobs', 'Document', 'Payment'].map(title => (
           <div key={title} className="side-bar-item">
             <div className="side-icon"></div>
-            <span>{title}</span>
+            <span><a href="/{title}">{title}</a></span>
           </div>
         ))}
       </aside>

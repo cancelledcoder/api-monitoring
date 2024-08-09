@@ -148,19 +148,16 @@ button[type="submit"]:hover {
   text-size-adjust: 60%;
 }
 
-/* Error text */
 .error {
   color: red;
   margin-bottom: 10px;
 }
 
-/* CSS for loading indicator */
 button[type="submit"][disabled] {
   background-color: #ddd;
   cursor: not-allowed;
 }
 
-/* CSS for mobile responsiveness */
 @media (max-width: 768px) {
   .background-image {
       width: 70%;
