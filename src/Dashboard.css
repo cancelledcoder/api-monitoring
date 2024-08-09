@@ -21,7 +21,7 @@ body, html {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: 10;
 }
@@ -35,8 +35,6 @@ body, html {
 .lock-icon {
   width: 80px;
   height: 80px;
-  margin: none;
-  padding: none;
 }
 
 .nav-right {
@@ -62,7 +60,7 @@ body, html {
   background-color: #f5f5f5;
   padding: 20px 0;
   position: fixed;
-  top: 60px;
+  top: 100px;
   left: 0;
   height: calc(100vh - 60px);
   overflow-y: auto;
@@ -107,33 +105,6 @@ body, html {
   overflow-y: auto;
 }
 
-.summary-cards {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.summary-card {
-  flex: 1;
-  padding: 20px;
-  color: #fff;
-  border-radius: 10px;
-  margin: 0 10px;
-  text-align: center;
-}
-
-.red-blur {
-  background-color: rgba(255, 0, 0, 0.1);
-}
-
-.yellow-blur {
-  background-color: rgba(255, 255, 0, 0.1);
-}
-
-.green-blur {
-  background-color: rgba(0, 255, 0, 0.1);
-}
-
 .chart-container,
 .tasks-container,
 .users-container {
@@ -160,6 +131,14 @@ body, html {
   margin: 5px 0;
 }
 
+.users-container {
+  display: inline-block;
+  width: 60%; 
+  margin: 1%;
+  vertical-align: top;
+  
+}
+
 .users-container table {
   width: 100%;
   border-collapse: collapse;
@@ -178,16 +157,16 @@ body, html {
 
 .chart-container {
   display: inline-block;
-  width: 30%; /* Adjust to fit two charts side by side */
-  height: 500px; /* Adjust height to match the demo image */
+  width: 60%; 
+  height: 600px; 
   margin: 1%;
   vertical-align: top;
 }
 
 .tasks-container {
   display: inline-block;
-  width: 30%; /* Adjust to fit two charts side by side */
-  height: 500px; /* Adjust height to match the demo image */
+  width: 30%; 
+  height: 600px; 
   margin: 1%;
   vertical-align: top;
 }
@@ -202,6 +181,63 @@ body, html {
   height: 100%;
 }
 
-.summary-component h3 {
-  color: gray; /* Change text color to gray */
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  width: 98%; 
+  height: auto;
+}
+
+.summary-card {
+  flex: 1;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+  margin: 0 10px;
+  text-align: center;
+  min-width: 0;
+}
+
+.red-blur {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.orange-blur {
+  background-color: rgba(255, 162, 0, 0.119);
+}
+
+.green-blur {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+.summary-cards h3 {
+  color: darkgrey;
+  text-align: left;
+}
+
+.summary-cards h2 {
+  color: black;
+  text-align: left;
+}
+
+.upcoming-event {
+  background: linear-gradient(to right, #03a9f4, #ff9800); 
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  position: flex;
+  margin-left: 15px;
+  flex-grow: 1;
+}
+
+.upcoming-event h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.upcoming-event p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
 }

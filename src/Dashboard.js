@@ -13,14 +13,14 @@ const lineChartData = {
   datasets: [
     {
       label: 'Last 6 Months',
-      data: [25, 30, 45, 60, 50, 70, 55, 80],
+      data: [25, 45, 35, 25, 55, 20, 15, 25],
       borderColor: 'blue',
       borderWidth: 1,
       fill: false,
     },
     {
       label: 'Previous',
-      data: [30, 35, 40, 55, 45, 65, 50, 75],
+      data: [20, 25, 25, 35, 30, 35, 40, 45],
       borderColor: 'green',
       borderWidth: 1,
       fill: false,
@@ -66,16 +66,20 @@ const Dashboard = () => {
       <main className="main-content">
         <div className="summary-cards">
           <div className="summary-card red-blur">
-            <h3>Total API Calls</h3>
             <h2>1259</h2>
+            <h3>Total API Calls</h3>
           </div>
-          <div className="summary-card yellow-blur">
-            <p>Alerts</p>
+          <div className="summary-card orange-blur">
             <h2>23</h2>
+            <h3>Alerts</h3>            
           </div>
           <div className="summary-card green-blur">
-            <p>Action Required</p>
             <h2>123</h2>
+            <h3>Action Required</h3>
+          </div>
+          <div className="upcoming-event">
+          <h4>Upcoming Company Event</h4>
+          <p>Watch a thriller</p>
           </div>
         </div>
         <div className="chart-container">
@@ -89,11 +93,10 @@ const Dashboard = () => {
           <Doughnut data={doughnutChartData} />
         </div>
         <div className="users-container">
-          <h3>User</h3>
           <table>
             <thead>
               <tr>
-                <th>Name</th>
+                <th>User Name</th>
                 <th>Email Address</th>
                 <th>Department</th>
                 <th>Role</th>
