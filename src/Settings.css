@@ -1,0 +1,26 @@
+.settings-page {
+    padding: 20px;
+  }
+  
+  .settings-options {
+    margin-top: 20px;
+  }
+  
+  .settings-item {
+    margin-bottom: 20px;
+  }
+  
+  .settings-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .settings-item input,
+  .settings-item select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  

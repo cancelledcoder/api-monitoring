@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 import LockIcon from './lock.svg';
 import BellIcon from './bell.png';
@@ -56,10 +57,10 @@ const Dashboard = () => {
           <span><a href="/dashboard">Dashboard</a></span>
           <span className="side-arrow">&#9656;</span>
         </div>
-        {['API Calls', 'User in AEM', 'Alert', 'Action Activities', 'Alert configuration', 'Post', 'Tickets', 'Reports', 'Jobs', 'Document', 'Payment'].map(title => (
+        {['API Calls', 'User in AEM', 'Alert', 'Action Activities', 'Alert configuration', 'Post', 'Tickets', 'Reports', 'Jobs', 'Document', 'Payment', 'Setting'].map(title => (
           <div key={title} className="side-bar-item">
             <div className="side-icon"></div>
-            <span><a href="/{title}">{title}</a></span>
+            <span><a href={`/${title.toLowerCase().replace(/\s+/g, '-')}`}>{title}</a></span>
           </div>
         ))}
       </aside>
